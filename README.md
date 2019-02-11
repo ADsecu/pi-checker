@@ -3,8 +3,8 @@ set Target IP or Use shodan API to find Pi-hole IPs to steal [blacklist] & get i
 
 
 ## Screenshot
-![s c](screenshot.png "screenshot")
-![s c](screenshot0.png "screenshot0")
+![s c](screenshot.png "screenshot1")
+![s c](screenshot0.png "screenshot2")
 
 ## Requirements
 **Python3.6 or higher**
