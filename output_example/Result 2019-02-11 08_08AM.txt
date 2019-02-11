@@ -1,0 +1,82 @@
+
+
+IP -> 91.159.12.21
+info -> Core v4.2.1 | web v4.2 | FTL v4.2.1
+   streamtvlinksme.disqus.com
+
+
+IP -> 109.99.43.13
+info -> Core v4.0 | web v4.0 | FTL v4.0
+
+
+IP -> 37.85.209.131
+info -> Core v4.0 | web v4.0 | FTL v4.0
+   (^|\.)itunes\.com$
+   (^|\.)icloud\.com$
+   (^|\.)icloud\.com$
+
+
+IP -> 82.4.6.152
+info -> Core v4.0 | web v4.0 | FTL v4.0
+
+
+IP -> 40.114.29.195
+info -> Core v4.2.1 | web v4.2 | FTL v4.2
+   dna.cyberlink.com
+   liveupdate.cyberlink.com
+   atumn.hac.lp1.d4c.nintendo.net
+   sun.hac.lp1.d4c.nintendo.net
+   beach.hac.lp1.eshop.nintendo.net
+   cdn.digitaltext.rtl.de
+   de.ibsstat.lgappstv.com
+   access-board.gov
+   jk1l.ru
+   l102.ru
+   d3p8zr0ffa9t17.cloudfront.net
+   ro20.ru
+   r212.ru
+   l491.ru
+   nccih.nih.gov
+   svist21.cz
+   kth.se
+   isc.org
+   067.cz
+   edu.za
+   1x1.cz
+   (^|\.)nintendo\.net$
+   (^|\.)facebook\.com$
+   /&lt;.+?@.+?\.ru&gt;/
+   (^|\.)cloudfront\.net$
+   +?@.+?\.ru
+   ^[^:\/]+:\/?\/?[^\/]+\.ru\/
+   (?:[a-zA-Z]*\.)+(ru)[/|\s]
+   .+\.ru&gt;$
+   /\.ru$/
+   (^|\.)Ru$(^|\.)gov$
+
+
+IP -> 81.19.178.77
+info -> Core v4.2.1 | web v4.2 | FTL v4.2.1
+   version.bind
+   18e0fbf8.openresolverproject.org
+   dnsscan.shadowserver.org
+   researchscan541.eecs.umich.edu
+
+
+IP -> 18.18.67.171
+info -> Core v4.1.1 | web v4.1.1 | FTL v4.1.2
+   direct.shodan.io
+   www.bb.com.br
+   www.itau.com.br
+   bancovotorantim.com.br
+   santander.com.br
+   veloxzone.com.br
+   dns.msftncsi.com
+   easynvest.com.br
+   aaxads.com
+   l.aaxads.com
+   ifood.com.br
+   quemdisseberenice.com.br
+   getnet.com.br
+   credsystem.com.br
+   http://b.thumbs.redditmedia.com/*.png

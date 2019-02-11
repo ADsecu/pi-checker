@@ -10,13 +10,13 @@ import argparse
 SHODAN_API_KEY = "Shodan API key Here" # Your Shodan API key :)
 shodan = shodan.Shodan(SHODAN_API_KEY)
 ip_list = []
-b_domain = []
+content = []
 time  = datetime.datetime.now().strftime("%Y-%m-%d %I_%M%p")
-file = 'ips {}.txt'.format(time)
-bfile = 'blacklist {}.txt'.format(time)
+Rfile = 'Result {}.txt'.format(time)
 parser = argparse.ArgumentParser(description='Find pi-hole IPs in [Shodan.io]' +
                                     ' and Try to steal Blacklists :) ')
 parser.add_argument('-l', '--limit', help='set Number of results', type=int)
+parser.add_argument('-t', '--target', help='set target IP ')
 args = parser.parse_args()
 
 
@@ -51,20 +51,27 @@ def piholer():
     for ip in ip_list:
         try:
             pihole = ph.PiHole(ip)
+            core = pihole.getVersion()['core_current']
+            web = pihole.getVersion()['web_current']
+            FTL = pihole.getVersion()['FTL_current']
             blacklist = pihole.getList("black")
+            content.append('\n\nIP -> {}\ninfo -> Core {} | web {} | FTL {}'.format(ip, core, web, FTL))
             for burl in blacklist:
                 if len(burl) > 0 :
                     print('\33[32m[+]Success: {} -> {} domains\33[0m'.format(ip, len(burl)))
                     for i in burl:
-                        b_domain.append(i)
+                        content.append('   {}'.format(i))
+
         except:
             print('\033[91m[-]Failed {}\033[0m'.format(ip))
             pass
 
 
 def save_file(filename, input):
-    with open(filename, "w", encoding='utf-8') as f: #ا
-        for text in input[::-1]:
+    this_folder = os.path.dirname(os.path.abspath(__file__))
+    file_name = os.path.join(this_folder, filename)
+    with open(file_name, "w", encoding='utf-8') as f: #ا
+        for text in input:
             f.write(text+'\n')
         f.close()
 
@@ -74,28 +81,29 @@ def main():
  _ __ (_)       ___| |__   ___  ___| | _____ _ __
 | '_ \| |_____ / __| '_ \ / _ \/ __| |/ / _ \ '__|
 | |_) | |_____| (__| | | |  __/ (__|   <  __/ |
-| .__/|_|      \___|_| |_|\___|\___|_|\_\___|_|v1.0
+| .__/|_|      \___|_| |_|\___|\___|_|\_\___|_|v1.1
 |_|        Twitter & Github :  @ADsecu
 
             ''')
-    mess = '\n\33[33mIPs saved in --> {}\nDomains saven in --> {}\nThanks\33[0m'.format(file, bfile)
+    mess = '\n\33[33mIPs & Domains saved in --> {}\nThanks\33[0m'.format(Rfile)
     if args.limit:
         shodan_api(args.limit)
-        save_file(file, ip_list)
         piholer()
-        save_file(bfile, b_domain)
+        save_file(Rfile, content)
+        print(mess)
+    elif args.target:
+        ip_list.append(args.target)
+        piholer()
+        save_file(Rfile, content)
         print(mess)
     elif args.limit is None:
         shodan_api()
-        save_file(file, ip_list)
         piholer()
-        save_file(bfile, b_domain)
+        save_file(Rfile, content)
         print(mess)
     else:
         print('''
-        USAGE: python3 filnemae.py -l 100
-        -l  to set limit for search in shodan !
-
+        Something Wrong :)
         ''')
 
 
