@@ -1,9 +1,10 @@
 # pi-checker
-Use shodan API to find Pi-hole IP and steal [blacklist]
+set Target IP or Use shodan API to find Pi-hole IPs to steal [blacklist] & get info about Pi-hole version.such as core,web and FTL.
 
 
 ## Screenshot
 ![s c](screenshot.png "screenshot")
+![s c](screenshot0.png "screenshot0")
 
 ## Requirements
 **Python3.6 or higher**
@@ -17,22 +18,28 @@ open **pi-checker.py** replace `Shodan API Here`(Line:10) with your key :)
 ```
 python3 pi-checker.py 
 ```
-Optional arguments
+Optional arguments (use only one arg)
 ```
 -h , --help     show this help message and exit
--l , --limit    set Number of results
+-l , --limit    set Number of results from Shodan
+-t , --target   set Target IP
 ```
 
 #### Example 
 ```
 python3 pi-checker.py -l 99
 ```
+or
+```
+python3 pi-checker.py -t 10.0.0.1
+```
 ## Note:
 - If connection takes more than 30 seconds, press `Ctrl+c` to skip .
+- You can use Target IP without Shodan API key :) .
 #### Note+1:
-Automatically create two files:
-1. IPs.txt --> save all IPs
-2. blacklists.txt --> Domains
+You can find Result in txt file in same folder:
+1. Result 2019-02-11 11_55PM.txt
+
  
  ## Who am i ?
  Ahmad A. Alsrehy
