@@ -22,7 +22,7 @@ args = parser.parse_args()
 
 def shodan_api(limit=0):
     count = 0
-    choose = input('\33[33m**Choose search keyword**\n    [1] - pi-hole (recommanded)\n    [2] - pihole\npi-checker~$  \33[0m')
+    choose = input('\33[33m**Choose search keyword**\n    [1] - pi-hole (recommended)\n    [2] - pihole\npi-checker~$  \33[0m')
     if choose == '1':
         print('Searching Pi-hole IPs in Shodan ... ')
         for search in shodan.search_cursor('pi-hole'):
